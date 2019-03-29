@@ -1,7 +1,7 @@
 import numpy as np
 import random as random
 
-inputN = list(map(int, input("Podaj wejścia(dowolne liczby oddzielona spacją: ").split()))
+inputN = list(map(float, input("Podaj wejścia(dowolne liczby oddzielona spacją): ").split()))
 inputN = np.array(inputN)
 def Count(inputN):
     counter = 0
@@ -11,14 +11,14 @@ def Count(inputN):
         counter = counter + 1
     return counter
 N = Count(inputN)
-z = sum(inputN)
+z = sum(inputN) - 1
 z = np.array(z)
 K = int(input("Podaj liczbę epok: "))
 ten = float(input("Podaj skok treningowy: "))
 print("Liczba i rodzaj wejść: ", inputN)
 print ("Ustawiona liczba epok: ", K)
-interval1 = float(input("Podaj pierwszą początkową liczbę dla wagi od 0 do 1 - liczba dziesiętna z kropką: "))
-interval2 = float(input("Podaj ostatnią początkową liczbę dla wagi od 0 do 1 - liczba dziesiętna z kropką: "))
+interval1 = float(input("Podaj pierwszą początkową liczbę dla wagi od 0 do 1 (liczba dziesiętna z kropką): "))
+interval2 = float(input("Podaj ostatnią początkową liczbę dla wagi od 0 do 1 (liczba dziesiętna z kropką): "))
 neuralW = np.random.uniform(low=interval1, high=interval2, size=N)
 neuralW = np.array(neuralW)
 print ("Początkowe wagi: ")
