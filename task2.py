@@ -51,6 +51,7 @@ for iteration in range(K):
                     arr_cnt += 1
                 else:
                     k += 1
+                    arr_cnt = 0
     else:
         StopIteration()
 print("Końcowe wagi: ")
