@@ -14,7 +14,7 @@ def Count(inputN):
         counter = counter + 1
     return counter
 N = Count(inputN)
-z = sum(inputN) + 100
+z = sum(inputN) / 100
 z = np.array(z)
 K = int(input("Podaj liczbę epok: "))
 ten = float(input("Podaj skok treningowy: "))
@@ -32,7 +32,7 @@ for iteration in range(K):
     if k < K:
         y = sum(inputN * neuralW)
         delta = (z - y)
-        neuralW = neuralW + ten * (delta) * inputN
+        neuralW = neuralW + ten * delta * inputN
         k += 1
         learn_list.append(delta)
     else:
