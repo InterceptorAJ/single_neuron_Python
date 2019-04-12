@@ -46,18 +46,19 @@ M = in2
 learn_list = []
 for iteration in range(K):
         for array in inputN:
-            for i in z:
-                if arr_cnt < M and k < K:
-                    y = sum(array * neuralW)
-                    delta = i - y
-                    neuralW = neuralW + ten * (delta) * array
-                    arr_cnt += 1
-                elif arr_cnt == M:
-                    arr_cnt = 0
-                    k += 1
-                    learn_list.append(delta)
-                elif k == K:
-                    StopIteration()
+            for a in array:
+                for i in z:
+                    if arr_cnt < M and k < K:
+                        y = sum(a * neuralW)
+                        delta = i - y
+                        neuralW = neuralW + ten * delta * a
+                        arr_cnt += 1
+                    elif arr_cnt == M:
+                        arr_cnt = 0
+                        k += 1
+                        learn_list.append(delta)
+                    elif k == K:
+                        StopIteration()
 
 print("Końcowe wagi: ")
 print(neuralW)
@@ -70,20 +71,20 @@ for array in inputN:
 print(z1)
 print("Wyniki rzeczywiste: ")
 print(z)
-print("Różnica: ")
-delta = z - z1
-print('deltuk', delta)
-for i in delta:
-    if i < 0:
-        i = i * (-1)
-    elif i > 0:
-        pass
-    elif i == 0:
-        i = 0
-print(delta)
-print("Różnica w %: ")
-diff1 = delta * 100
-print(diff1)
+# print("Różnica: ")
+# delta = z - z1
+# print('deltuk', delta)
+# for i in delta:
+#     if i < 0:
+#         i = i * (-1)
+#     elif i > 0:
+#         pass
+#     elif i == 0:
+#         i = 0
+# print(delta)
+# print("Różnica w %: ")
+# diff1 = delta * 100
+# print(diff1)
 
 x = []
 for i in range(K):
